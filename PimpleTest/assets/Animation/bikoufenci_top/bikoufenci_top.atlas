@@ -1,0 +1,27 @@
+
+bikoufenci_top.png
+size: 37,16
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fencliu1
+  rotate: true
+  xy: 28, 4
+  size: 8, 7
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+fencliu2
+  rotate: false
+  xy: 2, 2
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+fencliu3
+  rotate: false
+  xy: 15, 3
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1

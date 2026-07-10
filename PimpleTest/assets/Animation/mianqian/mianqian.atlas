@@ -1,0 +1,27 @@
+
+mianqian.png
+size: 309,120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4_1
+  rotate: true
+  xy: 2, 2
+  size: 116, 232
+  orig: 116, 232
+  offset: 0, 0
+  index: -1
+jiya
+  rotate: false
+  xy: 236, 45
+  size: 71, 73
+  orig: 79, 80
+  offset: 2, 7
+  index: -1
+quan
+  rotate: false
+  xy: 236, 23
+  size: 20, 20
+  orig: 24, 24
+  offset: 2, 2
+  index: -1

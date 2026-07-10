@@ -1,0 +1,48 @@
+
+nv_03.png
+size: 1741,945
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+n3_ng
+  rotate: true
+  xy: 1436, 542
+  size: 401, 182
+  orig: 401, 182
+  offset: 0, 0
+  index: -1
+n3_ren
+  rotate: true
+  xy: 2, 2
+  size: 941, 1432
+  orig: 941, 1432
+  offset: 0, 0
+  index: -1
+n3_yk
+  rotate: true
+  xy: 1620, 542
+  size: 401, 119
+  orig: 401, 119
+  offset: 0, 0
+  index: -1
+n3_zc
+  rotate: true
+  xy: 1436, 139
+  size: 401, 182
+  orig: 401, 182
+  offset: 0, 0
+  index: -1
+n3_zui1
+  rotate: true
+  xy: 1620, 357
+  size: 183, 112
+  orig: 183, 112
+  offset: 0, 0
+  index: -1
+n3_zui2
+  rotate: true
+  xy: 1620, 172
+  size: 183, 112
+  orig: 183, 112
+  offset: 0, 0
+  index: -1

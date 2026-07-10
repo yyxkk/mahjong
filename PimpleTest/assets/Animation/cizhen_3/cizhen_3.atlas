@@ -1,0 +1,20 @@
+
+cizhen_3.png
+size: 400,159
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+3_3
+  rotate: true
+  xy: 2, 2
+  size: 155, 374
+  orig: 155, 374
+  offset: 0, 0
+  index: -1
+quan
+  rotate: false
+  xy: 378, 137
+  size: 20, 20
+  orig: 24, 24
+  offset: 2, 2
+  index: -1
