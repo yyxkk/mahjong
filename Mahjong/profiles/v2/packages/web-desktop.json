@@ -1,0 +1,24 @@
+{
+  "__version__": "1.0.1",
+  "builder": {
+    "common": {
+      "binGroupConfig": {
+        "threshold": 16,
+        "enable": false
+      },
+      "polyfills": {
+        "asyncFunctions": true
+      }
+    },
+    "options": {
+      "web-desktop": {
+        "useWebGPU": false,
+        "resolution": {
+          "designWidth": 720,
+          "designHeight": 1280
+        },
+        "__version__": "1.0.1"
+      }
+    }
+  }
+}
