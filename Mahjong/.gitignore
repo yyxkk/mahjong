@@ -1,17 +1,32 @@
-library/             # 资源导入缓存，体积巨大，每个人本地打开编辑器自动生成
-temp/                # 编辑器临时缓存
-local/               # 本机个人编辑器配置（窗口布局、最近打开、本地路径，多人拉取会冲突）
-build/               # 打包输出目录，构建产物，每次打包都会变
-packages/            # 下载的插件缓存
-node_modules/        # npm依赖，拉取后执行npm install恢复
+# Cocos Creator 3.8.8
+library/
+temp/
+local/
+build/
+packages/
 .creator/
 .editor/
 .meta-cache/
-creator.d.ts         # 自动生成的类型文件
-*.log
+creator.d.ts
+
+# 编辑器本地配置
+profiles/
+
+# npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 打包输出
 publish/
 release/
-# IDE配置
+build-report.html
+build-report.json
+
+# IDE和系统文件
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
+*.log
