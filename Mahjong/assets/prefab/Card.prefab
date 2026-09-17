@@ -130,8 +130,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
-      "height": 36
+      "width": 162,
+      "height": 213
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -167,7 +167,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941",
+      "__uuid__": "3552b9d9-f6ba-4a3a-b20e-450ca1ec0a72@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -242,7 +242,43 @@
     "__prefab": {
       "__id__": 11
     },
-    "cardData": null,
+    "cardSprite": {
+      "__id__": 5
+    },
+    "allCardFrames": [
+      {
+        "__uuid__": "c6b5c68b-d2c5-4266-a772-a219e98c8f38@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "f682b530-ad7e-4457-b1fc-6bf2cf8af1d5@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "8dd062dd-7f28-4fc1-bb6e-20d1b018bbed@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "7e0baabd-4bed-4e44-94ce-ff5471afc539@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "7953c179-6ae2-43eb-b612-0fbb659688c8@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "95cab0d0-7b63-4427-96a8-a9014acb3530@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "95d198e6-cdca-478f-b8a5-d8d2204f3869@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "52eb4e2c-7212-41ea-a949-4dd8bcafd810@f9941",
+        "__expectedType__": "cc.SpriteFrame"
+      }
+    ],
     "_id": ""
   },
   {
@@ -261,7 +297,6 @@
     "__prefab": {
       "__id__": 13
     },
-    "dragThreshold": 10,
     "_id": ""
   },
   {

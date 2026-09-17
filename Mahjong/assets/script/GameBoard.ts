@@ -25,6 +25,7 @@ export class GameBoard extends Component {
         // 碰：同花色同数字
         const isPeng = c1.suit === c2.suit && c2.suit === c3.suit && c1.num === c2.num && c2.num === c3.num;
         if(isPeng) return true;
+
         // 吃：同花色，非字牌，数字连续
         if(c1.suit === CardSuit.ZI) return false;
         if(c1.suit !== c2.suit || c2.suit !== c3.suit) return false;
@@ -47,7 +48,7 @@ export class GameBoard extends Component {
         this.checkAndResolveMatch();
     }
 
-    // 生成牌：根据消除记录动态权重
+    // 生成牌：根据消除记录动态权重 ✅重点修改：调用setCardData
     spawnCard(row:number, col:number):Promise<MahjongCardComp>{
         return new Promise(resolve=>{
             const cardData = this.generateCardByWeight();
@@ -56,9 +57,11 @@ export class GameBoard extends Component {
             const touchComp = node.getComponent(MahjongCardTouch)!;
             touchComp.setBoardRef(this);
 
-            comp.cardData = cardData;
+            // =====核心修改：调用setCardData，触发贴图逻辑=====
+            comp.setCardData(cardData);
             comp.row = row;
             comp.col = col;
+
             this.boardRoot.addChild(node);
             this.board[row][col] = comp;
             // 计算格子坐标
@@ -68,19 +71,19 @@ export class GameBoard extends Component {
         })
     }
 
-    // ========== 动态权重生成牌（难度核心） ==========
+    // ========== 动态权重生成牌（难度核心，只生成1,2,3,5,6,7,8,9万，跳过4万） ==========
     generateCardByWeight(): MahjongCard {
-        // 简单实现：根据eliminatedMap加权，解锁新牌
+        // 基础池：万子1~3永远可用，去掉4万
         const pool:string[] = [];
-        // 基础池：万子1~3永远可用
         pool.push("wan_1","wan_2","wan_3");
-        // 消除足够多后解锁更多牌
+
+        // 消除足够多后解锁更多万子，跳过4万：5、6、7、8、9万
         const totalElim = Array.from(this.eliminatedMap.values()).reduce((a,b)=>a+b,0);
         if(totalElim > 10){
-            pool.push("wan_4","wan_5");
+            pool.push("wan_5","wan_6");
         }
         if(totalElim >25){
-            pool.push("wan_6","wan_7","wan_8","wan_9");
+            pool.push("wan_7","wan_8","wan_9");
         }
         if(totalElim>40){
             pool.push("tong_1","tong_2","tong_3");
@@ -88,13 +91,17 @@ export class GameBoard extends Component {
         if(totalElim>60){
             pool.push("zi_1","zi_2","zi_3"); //字牌
         }
+
         // 加权：已经消除过的牌，增加出现概率
         for(const key of this.eliminatedMap.keys()){
+            // 额外保护：防止历史消除记录里的 wan_4 再次进入牌池
+            if(key === "wan_4") continue;
             const cnt = this.eliminatedMap.get(key)!;
             for(let i=0;i<cnt;i++){
                 pool.push(key);
             }
         }
+
         // 随机抽一个
         const selectedKey = pool[Math.floor(Math.random()*pool.length)];
         const [suit, numStr] = selectedKey.split("_");
@@ -120,6 +127,7 @@ export class GameBoard extends Component {
         this.board[r2][c2] = cardA;
         cardA.row = r2; cardA.col = c2;
         cardB.row = r1; cardB.col = c1;
+
         // 交换位置动画
         const posA = this.getCellLocalPos(r1,c1);
         const posB = this.getCellLocalPos(r2,c2);
@@ -127,6 +135,7 @@ export class GameBoard extends Component {
             cardA.playFall(posB,0.2),
             cardB.playFall(posA,0.2)
         ]);
+
         // 交换后检测消除
         await this.checkAndResolveMatch();
         this.isOperating = false;
